@@ -14,13 +14,15 @@ namespace DemoTCPClient
         {
             //Creo una nuova socket
             var address = new IPEndPoint(IPAddress.Loopback, 8080);
-            using (Socket serverSocket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp))
+            //using (Socket serverSocket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp))
+            using (TcpClient serverSocket = new TcpClient())
             {
                 //Collegarsi al server
-                await serverSocket.ConnectAsync(address);
+                //await serverSocket.ConnectAsync(IPAddress.Loopback, 8080);
+                await serverSocket.ConnectAsync(address.Address, address.Port);
 
                 //Creare lo stream di comunicazione
-                using (var stream = new NetworkStream(serverSocket))
+                using (var stream = serverSocket.GetStream())
                 {
                     //Invia i dati al server
                     while(true)

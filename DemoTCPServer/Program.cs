@@ -14,19 +14,22 @@ namespace DemoTCPServer
         {
             //Creare la socket
             var address = new IPEndPoint(IPAddress.Loopback, 8080);
-            Socket serverSocket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            //Socket serverSocket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             //Bindind della socket verso IP e Porta
-            serverSocket.Bind(address);
+            //serverSocket.Bind(address);
             //Mettere in ascolto il server
-            serverSocket.Listen(100);
+            //serverSocket.Listen(100);
+            TcpListener serverSocket = new TcpListener(address);
+            serverSocket.Start();
+
 
             //Accettare la connessione
             while (true)
             {
-                using (Socket clientSocket = await serverSocket.AcceptAsync())
+                using (TcpClient clientSocket = await serverSocket.AcceptTcpClientAsync())
                 {
                     //Generare lo stream di comunicazione
-                    using (NetworkStream stream = new NetworkStream(clientSocket))
+                    using (NetworkStream stream = clientSocket.GetStream() )
                     {
                         while (true)
                         {
