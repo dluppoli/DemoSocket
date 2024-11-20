@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTCPServer", "DemoTCPServer\DemoTCPServer.csproj", "{FCADA2CB-0D14-4955-A00D-ABE732B289C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTCPClient", "DemoTCPClient\DemoTCPClient.csproj", "{72FBC9E2-683A-4458-AA45-68ED1E647493}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCADA2CB-0D14-4955-A00D-ABE732B289C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCADA2CB-0D14-4955-A00D-ABE732B289C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCADA2CB-0D14-4955-A00D-ABE732B289C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCADA2CB-0D14-4955-A00D-ABE732B289C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72FBC9E2-683A-4458-AA45-68ED1E647493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72FBC9E2-683A-4458-AA45-68ED1E647493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72FBC9E2-683A-4458-AA45-68ED1E647493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72FBC9E2-683A-4458-AA45-68ED1E647493}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1BE7337-0686-4ECD-9C50-4051F6F85D34}
+	EndGlobalSection
+EndGlobal
