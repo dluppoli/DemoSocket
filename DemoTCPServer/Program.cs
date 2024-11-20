@@ -26,40 +26,47 @@ namespace DemoTCPServer
             //Accettare la connessione
             while (true)
             {
-                using (TcpClient clientSocket = await serverSocket.AcceptTcpClientAsync())
-                {
-                    //Generare lo stream di comunicazione
-                    using (NetworkStream stream = clientSocket.GetStream() )
-                    {
-                        while (true)
-                        {
-                            try
-                            {
-                                //Ricevere dati
-                                byte[] buffer = new byte[1024];
-                                await stream.ReadAsync(buffer, 0, buffer.Length);
-
-                                //Elabora i dati
-                                string message = Encoding.ASCII.GetString(buffer);
-                                Console.WriteLine("Ho ricevuto " + message);
-
-                                //Spedisce dati di risposta
-                                message = "Echo di: " + message;
-                                byte[] responseBuffer = Encoding.ASCII.GetBytes(message);
-                                await stream.WriteAsync(responseBuffer, 0, responseBuffer.Length);
-                            }
-                            catch (Exception ex)
-                            {   
-                                Console.WriteLine(ex.ToString());
-                                break;
-                            }
-                        }
-                        //Chiusura della socket e dello stream
-                    }
-                }
+                TcpClient clientSocket = await serverSocket.AcceptTcpClientAsync();
+                ChatWithClient(clientSocket);   
             }
 //            Console.WriteLine("Esecuzione terminata");
 //            Console.ReadLine();
+        }
+
+        static private void ChatWithClient(TcpClient clientSocket)
+        {
+            Task.Run(async () =>
+            {
+                //Generare lo stream di comunicazione
+                using (NetworkStream stream = clientSocket.GetStream())
+                {
+                    while (true)
+                    {
+                        try
+                        {
+                            //Ricevere dati
+                            byte[] buffer = new byte[1024];
+                            await stream.ReadAsync(buffer, 0, buffer.Length);
+
+                            //Elabora i dati
+                            string message = Encoding.ASCII.GetString(buffer);
+                            Console.WriteLine("Ho ricevuto " + message);
+
+                            //Spedisce dati di risposta
+                            message = "Echo di: " + message;
+                            byte[] responseBuffer = Encoding.ASCII.GetBytes(message);
+                            await stream.WriteAsync(responseBuffer, 0, responseBuffer.Length);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                            break;
+                        }
+                    }
+                    //Chiusura della socket e dello stream
+                }
+                clientSocket.Dispose();
+            });
         }
     }
 }
