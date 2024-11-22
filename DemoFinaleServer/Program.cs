@@ -57,7 +57,7 @@ namespace DemoFinaleServer
 
                                 for(int i=2; i<= Math.Sqrt(command.Value); i++)
                                 {
-                                    for (int j = 2 * i; j < i; j += i)
+                                    for (int j = 2 * i; j <= command.Value; j += i)
                                         numeri[j] = false;
                                 }
 

@@ -43,7 +43,7 @@ namespace DemoFinalLib
         public T Decode()
         { 
             var str = Encoding.UTF8.GetString(Data.ToArray());
-            var sr = new StreamReader(str);
+            var sr = new StringReader(str);
             var xs = new XmlSerializer(typeof(T));
 
             return (T)xs.Deserialize(sr);
