@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFinalLib", "DemoFinalLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModbusMaster", "ModbusMaster\ModbusMaster.csproj", "{A85E1608-D36A-4BCE-88A9-A910C6FC1D7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModbusDomotica", "ModbusDomotica\ModbusDomotica.csproj", "{C9662840-4AF9-4E80-988E-E87F81883885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{A85E1608-D36A-4BCE-88A9-A910C6FC1D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A85E1608-D36A-4BCE-88A9-A910C6FC1D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A85E1608-D36A-4BCE-88A9-A910C6FC1D7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9662840-4AF9-4E80-988E-E87F81883885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9662840-4AF9-4E80-988E-E87F81883885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9662840-4AF9-4E80-988E-E87F81883885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9662840-4AF9-4E80-988E-E87F81883885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
